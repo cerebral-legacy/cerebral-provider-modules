@@ -1,8 +1,11 @@
 # cerebral-provider-modules
 Modules pattern for Cerebral
 
+`npm install cerebral-provider-modules`
+
 ```js
 import ModulesProvider from 'cerebral-provider-modules';
+
 (controller || module).addContextProvider(ModulesProvider);
 ```
 
