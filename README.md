@@ -1,13 +1,22 @@
 # cerebral-provider-modules
 Modules pattern for Cerebral
 
-```js
-function myAction({modules, module}) {
-  module // Current module
-  module.services // Services of the module
-  module.state // State on the module
-  module.meta // Meta returned from module
+`npm install cerebral-provider-modules`
 
-  modules // All modules, with services, state, and meta
+```js
+import ModulesProvider from 'cerebral-provider-modules';
+
+(controller || module).addContextProvider(ModulesProvider);
+```
+
+```js
+function SomeAction({module, modules}) {
+  module.state.set('foo', 'bar');
+  module.services.foo();
+  module.meta // {path,name, ...}
+
+  modules.someOtherModule.meta // {path,name, ...}
+  modules.someOtherModule.state('foo', 'bar');
+  modules.someOtherModule.services.foo();
 }
 ```
