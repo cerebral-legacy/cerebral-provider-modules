@@ -11,11 +11,11 @@ import ModulesProvider from 'cerebral-provider-modules';
 
 ```js
 function SomeAction({module, modules}) {
+  module.meta // returned value from module declaration
   module.state.set('foo', 'bar');
   module.services.foo();
-  module.meta // {path,name, ...}
 
-  modules.someOtherModule.meta // {path,name, ...}
+  modules.someOtherModule.meta // returned value from module declaration
   modules.someOtherModule.state('foo', 'bar');
   modules.someOtherModule.services.foo();
 }
