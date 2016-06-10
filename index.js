@@ -8,6 +8,7 @@ function ModulesProvider(context, execution, controller) {
       return contextModules[pathKey]
     }, contextModules)
     module.meta = modules[key].meta
+    module.path = modulePath;
     module.state = context.state.select(modulePath)
     module.services = modulePath.reduce(function (services, key) {
       return services[key] || {}
