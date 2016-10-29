@@ -1,6 +1,8 @@
 # cerebral-provider-modules
 Modules pattern for Cerebral
 
+Not compatible with Cerebral 2
+
 `npm install cerebral-provider-modules`
 
 ```js
@@ -8,7 +10,7 @@ import ModulesProvider from 'cerebral-provider-modules';
 
 controller.addModules({})
 
-// Add it after modules are registered 
+// Add it after modules are registered
 controller.addContextProvider(ModulesProvider);
 ```
 
